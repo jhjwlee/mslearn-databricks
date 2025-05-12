@@ -16,30 +16,6 @@
 
 이 실습에는 새 Azure Databricks 작업 영역을 프로비저닝하는 스크립트가 포함되어 있습니다. 스크립트는 Azure 구독에서 이 실습에 필요한 컴퓨팅 코어에 대한 충분한 할당량이 있는 지역에 Premium 등급 Azure Databricks 작업 영역 리소스를 만들려고 시도합니다. 또한 사용자 계정에 구독에서 Azure Databricks 작업 영역 리소스를 만들 수 있는 충분한 권한이 있다고 가정합니다. 할당량 또는 권한 부족으로 스크립트가 실패하면 Azure Portal에서 대화형으로 Azure Databricks 작업 영역을 만들어 볼 수 있습니다.
 
-1.  웹 브라우저에서 Azure Portal (https://portal.azure.com)에 로그인합니다.
-2.  페이지 상단의 검색 창 오른쪽에 있는 **[\>\_]** 버튼을 사용하여 Azure Portal에서 새 Cloud Shell을 만들고, **PowerShell** 환경을 선택합니다. Cloud Shell은 아래와 같이 Azure Portal 하단 창에 명령줄 인터페이스를 제공합니다:
-    *(이미지: Azure portal with a cloud shell pane)*
-
-    **Note**: 이전에 Bash 환경을 사용하는 Cloud Shell을 만든 경우 PowerShell로 전환하십시오.
-
-    Cloud Shell 창 상단의 구분선을 드래그하거나 창 오른쪽 상단의 **—**, **⤢**, **X** 아이콘을 사용하여 창을 최소화, 최대화 및 닫을 수 있습니다. Azure Cloud Shell 사용에 대한 자세한 내용은 Azure Cloud Shell 설명서를 참조하십시오.
-
-3.  PowerShell 창에서 다음 명령을 입력하여 이 리포지토리를 복제합니다:
-
-    ```powershell
-    rm -r mslearn-databricks -f
-    git clone https://github.com/MicrosoftLearning/mslearn-databricks
-    ```
-
-4.  리포지토리가 복제된 후 다음 명령을 입력하여 `setup.ps1` 스크립트를 실행합니다. 이 스크립트는 사용 가능한 지역에 Azure Databricks 작업 영역을 프로비저닝합니다:
-
-    ```powershell
-    ./mslearn-databricks/setup.ps1
-    ```
-
-5.  메시지가 표시되면 사용할 구독을 선택합니다 (여러 Azure 구독에 액세스할 수 있는 경우에만 발생).
-6.  스크립트가 완료될 때까지 기다립니다. 일반적으로 약 5분 정도 걸리지만 경우에 따라 더 오래 걸릴 수 있습니다. 기다리는 동안 Azure Databricks 설명서의 "What is Databricks Machine Learning?" 문서를 검토하십시오.
-
 ---
 
 ## Create a cluster (클러스터 생성)
